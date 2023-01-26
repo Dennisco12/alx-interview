@@ -10,10 +10,12 @@ def factorial(x):
         return 1
     return x * factorial(x - 1)
 
+
 def combination(n, r):
     """This returns the combination of the two inputted numbers"""
     comb = factorial(n) // (factorial(n-r) * factorial(r))
     return comb
+
 
 def pascal_triangle(n):
     """Function definition"""
@@ -28,5 +30,3 @@ def pascal_triangle(n):
             row.append(combination(idx, count))
         triangle.append(row)
     return triangle
-
-
