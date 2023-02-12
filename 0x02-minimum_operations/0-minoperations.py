@@ -24,4 +24,6 @@ def minOperations(n):
         else:
             text += clipboard
             operations += 1
+    if len(text) != n:
+        return 0
     return operations
