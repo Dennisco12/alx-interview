@@ -12,6 +12,9 @@ def minOperations(n):
     the current len is divisible by n or just paste
     when the current length is not divisible by n"""
 
+    if not isinstance(n, int):
+        return 0
+
     text = "H"
     clipboard = ''
     operations = 0
