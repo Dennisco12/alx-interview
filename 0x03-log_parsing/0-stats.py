@@ -31,6 +31,8 @@ try:
                     print("{}: {}".format(key, val))
             count = 0
 except (KeyboardInterrupt, TypeError):
+    pass
+finally:
     print('File size: {}'.format(totalSize))
     for key, val in sorted(statusCodes.items()):
         if val != 0:
