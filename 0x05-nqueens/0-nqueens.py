@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """N Queens Problem Solver.
-This module provides a program that solves the N Queens problem using backtracking. Given an integer N, it tries to place N
+This module provides a program that solves the N Queens problem using
+backtracking. Given an integer N, it tries to place N
 non-attacking queens on an NxN chessboard.
 Usage:
     python nqueens.py N
 where N is an integer greater than or equal to 4.
-The program prints every possible solution to the problem, one per line, in the format `(row, col)` for each queen's
+The program prints every possible solution to the problem, one per line,
+in the format `(row, col)` for each queen's
 position. It doesn't specify a particular order for the solutions.
 """
 
@@ -17,7 +19,8 @@ def solve_n_queens(n: int) -> list:
     Args:
         n: The number of queens and size of the chessboard.
     Returns:
-        A list of solutions, where each solution is a list of tuples representing the positions of the queens.
+        A list of solutions, where each solution is a list of tuples
+        representing the positions of the queens.
     """
     solutions = []
 
@@ -28,7 +31,8 @@ def solve_n_queens(n: int) -> list:
             row: The row to check.
             col: The column to check.
         Returns:
-            True if a queen can be placed at the given position without attacking any other queens on the board,
+            True if a queen can be placed at the given position without
+            attacking any other queens on the board,
             False otherwise.
         """
         # Check column
@@ -61,8 +65,9 @@ def solve_n_queens(n: int) -> list:
             row: The row to place the next queen on.
         """
         if row == n:
-            # All queens have been placed on the board, add solution to the list
-            solutions.append([(i, j) for i in range(n) for j in range(n) if board[i][j] == 1])
+            # All queens have been placed on the board, add solution to list
+            solutions.append([(i, j) for i in range(n) for j in range(n)
+                             if board[i][j] == 1])
             return
 
         for col in range(n):
@@ -81,7 +86,7 @@ def solve_n_queens(n: int) -> list:
 if __name__ == '__main__':
     # Parse command-line arguments
     if len(sys.argv) != 2:
-        print("Usage: python nqueens.py N")
+        print("Usage: nqueens N")
         sys.exit(1)
     try:
         n = int(sys.argv[1])
