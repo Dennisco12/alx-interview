@@ -2,6 +2,7 @@
 """This determines if a given set of data represent a valid
 utf-8 encoding"""
 
+
 def validUTF8(data):
     """data is a list of integers
     function returns True if data is a valid utf8
@@ -18,7 +19,7 @@ def validUTF8(data):
             elif item >> 7 == 0b1:
                 return False
         else:
-            if item>> 6 != 0b10:
+            if item >> 6 != 0b10:
                 return False
             count -= 1
     return count == 0
